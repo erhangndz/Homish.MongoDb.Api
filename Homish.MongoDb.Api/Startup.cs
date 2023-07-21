@@ -32,6 +32,7 @@ namespace Homish.MongoDb.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IBannerService, BannerService>();
            
             services.AddAutoMapper(typeof(Startup));
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
