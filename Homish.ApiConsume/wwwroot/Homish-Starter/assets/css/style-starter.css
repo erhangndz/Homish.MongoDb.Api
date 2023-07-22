@@ -15154,19 +15154,19 @@ a.view:hover {
   align-items: center;
 }
 
-.w3l-main-slider .banner-top1 {
+.w3l-main-slider .banner-top-1 {
   background: url(../images/banner2.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
 }
 
-.w3l-main-slider .banner-top2 {
+.w3l-main-slider .banner-top-2 {
   background: url(../images/banner3.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;
 }
 
-.w3l-main-slider .banner-top3 {
+.w3l-main-slider .banner-top-3 {
   background: url(../images/banner4.jpg) no-repeat center;
   background-size: cover;
   min-height: 100vh;

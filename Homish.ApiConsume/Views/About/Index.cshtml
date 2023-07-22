@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<!-- about breadcrumb -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        <div class="container py-2">
+            <h2 class="title">Hakkımızda</h2>
+            <ul class="breadcrumbs-custom-path mt-2">
+                <li><a href="/Default/Index">Ana Sayfa</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Hakkımızda </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //about breadcrumb -->
+<!-- /about-6-->
+@await Component.InvokeAsync("_About")
+<!-- //about-6-->
+<!-- /content-6-->
+<section class="w3l-content-6 py-5" id="why">
+    <div class="container py-lg-5">
+        <div class="row">
+            <div class="col-lg-4 content-6-left">
+                <h6 class="sub-title">Neden Bizi Seçmelisiniz</h6>
+                <h3 class="hny-title">Alanında en kaliteli hizmeti veren firmayız.</h3>
+            </div>
+            <div class="col-lg-4 content-6-right mt-lg-0 mt-4">
+                <p class="mb-3">
+                   Uzun yıllardır size en kaliteli hizmeti vermek için uğraşıyoruz.
+                </p>
+
+            </div>
+            <div class="col-lg-4 content-6-right mt-lg-0 mt-4">
+                <p class="mb-3">
+                İster evinizi satmak veya kiralamak isteyin, İsterse de Yeni ev satın almak veya kiraya çıkmak isteyin biz herkesin yardımına koşuyoruz. Sizler için işlerinizi kolaylaştırıyoruz.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //content-6-->
+<!-- team -->
+@await Component.InvokeAsync("_Team")
+<!-- //team -->
+

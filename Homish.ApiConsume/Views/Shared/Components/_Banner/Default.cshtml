@@ -1,0 +1,49 @@
+﻿@using DtoLayer.DTOS.BannerDtos;
+@model List<ResultBannerDto>
+@{
+    int count = 0;
+}
+<section class="w3l-main-slider" id="home">
+    <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+            @foreach (var item in Model)
+            {
+                count++;
+            
+            <div class="item">
+                <li>
+                        <div class="slider-info banner-view banner-top-@count bg bg2">
+
+                        <div class="banner-info">
+                            <div class="container">
+                                <div class="banner-info-bg text-left">
+                                    <p>@item.Title</p>
+                                    <h5>@item.Title2</h5>
+                                    <a href="about.html" class="btn btn-white">Daha Fazlası</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banhny-w3grids">
+                            <div class="banhny-w3grids-1">
+                                <h4 class="number-b">@count</h4>
+                            </div>
+                            <div class="banhny-w3grids-1">
+                                <h4><a href="#" class="hnys-title">@item.Description</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        }
+
+
+        </div>
+        <a href="#about" scroll="scroll">
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+    </div>
+</section>

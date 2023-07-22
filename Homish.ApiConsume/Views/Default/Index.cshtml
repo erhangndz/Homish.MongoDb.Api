@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<!-- main-slider -->
+@await Component.InvokeAsync("_Banner")
+<!-- /main-slider -->
+<!--/grids-->
+@await Component.InvokeAsync("_About")
+<!--//grids-->
+<!--/services-->
+@await Component.InvokeAsync("_WhatWedo")
+<!--//services-->
+<!-- stats -->
+<section class="w3l-stats py-5" id="stats">
+    <div class="gallery-inner container py-lg-0 py-3">
+        <div class="row stats-con pb-lg-3">
+            <div class="col-lg-4 col-6 stats_info counter_grid">
+                <p class="counter">730</p>
+                <h4>Satılık Evler</h4>
+            </div>
+            <div class="col-lg-4 col-6 stats_info counter_grid1">
+                <p class="counter">680</p>
+                <h4>Arsalarımız</h4>
+            </div>
+            <div class="col-lg-4 col-6 stats_info counter_grid mt-lg-0 mt-5">
+                <p class="counter">812</p>
+                <h4>Mutlu Müşteriler </h4>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- //stats -->
+<!--/grids2-->
+@await Component.InvokeAsync("_Properties")
+<!--//grids2-->
+<!-- testimonials -->
+@await Component.InvokeAsync("_Testimonial")
+<!-- //testimonials -->
+<!--/get -->
+<section class="w3l-grid-quote text-center py-5">
+    <div class="container py-3">
+        <h6 class="sub-title text-center">Bizimle Çalışın</h6>
+        <h3 class="hny-title mb-md-5 mb-4">Hemen Evinizi Satalım</h3>
+        <a href="contact.html" class="btn btn-style btn-primary mr-2">Bizimle Çalışın</a>
+        <a href="contact.html" class="btn btn-style btn-outline-primary">İletişime Geçin</a>
+    </div>
+</section>
+<!--//get -->
+

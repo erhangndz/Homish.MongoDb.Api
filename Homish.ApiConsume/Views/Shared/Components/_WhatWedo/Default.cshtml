@@ -1,0 +1,42 @@
+﻿@using DtoLayer.DTOS.WhatWedoDtos;
+@model List<ResultWhatWedoDto>
+
+<section class="w3l-services1">
+    <div id="content-with-photo4-block" class="py-5">
+        <div class="container py-md-5">
+            <div class="cwp4-two row">
+                <div class="cwp4-text col-lg-4 mb-lg-0 mb-5">
+                    <h6 class="sub-title">Neler Yapıyoruz</h6>
+                    <h3 class="hny-title">Size sunduğumuz çözümleri inceleyin</h3>
+                    <p>
+                        İlanlarımızdan en göze çarpanları inceleyin.
+                    </p>
+                    <a href="about.html" class="btn btn-style mt-lg-4 mt-2">Daha Fazlası</a>
+                </div>
+                @foreach (var item in Model)
+                {
+                    
+                
+                <div class="cwp4-image col-lg-4 col-md-6">
+                    <div class="grids4-info">
+                        <a href="#"><img src="@item.Image" class="img-fluid" alt=""></a>
+                        <div class="info-bg">
+                            <h5><a href="#">@item.Title</a></h5>
+                            <span class="price"> Fiyat: @item.Price</span>
+                            <p>@item.Description</p>
+                            <ul>
+                                <li><span class="fa fa-bed"></span> @item.Bedroom</li>
+                                <li><span class="fa fa-bath"></span> @item.Bathroom</li>
+                                <li><span class="fa fa-share-square-o"></span>@item.Square</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                }
+               
+
+
+            </div>
+        </div>
+    </div>
+</section>

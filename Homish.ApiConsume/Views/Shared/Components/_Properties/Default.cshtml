@@ -1,0 +1,28 @@
+﻿@using DtoLayer.DTOS.CityDtos;
+@model List<ResultCityDto>
+
+<section class="w3l-how-grids-3 py-5" id="how">
+    <div class="container py-md-5">
+        <div class="w3l-header mb-md-5 mb-4 text-center">
+            <h6 class="sub-title">İlanlar</h6>
+            <h3 class="hny-title">Şehre Göre İlanlar</h3>
+            <p class="">Hangi Şehirde Ev ararsanız arayın bizde çözüm var</p>
+        </div>
+        <div class="d-grid grid-col-3 grid-element-9 margin-top">
+            @foreach (var item in Model)
+            {
+                
+            
+            <div class="left-grid-ele-9 grid-bg1">
+                <div class="sub-wid-grid-9">
+                    <h4 class="text-grid-9"><a href="#">@item.CityName</a></h4>
+                    <p class="sub-para">@item.Description</p>
+                    <span>@item.PropCount</span>
+                </div>
+            </div>
+            }
+          
+        </div>
+      
+    </div>
+</section>
