@@ -4,25 +4,25 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Homish.ApiConsume.ViewComponents.About
+namespace Homish.ApiConsume.Controllers
 {
-    public class _Team:ViewComponent
+    public class PropertiesController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _Team(IHttpClientFactory httpClientFactory)
+        public PropertiesController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:5001/api/Team");
+            var responseMessage = await client.GetAsync("https://localhost:5001/api/Property");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData= await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<TeamViewModel>(jsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<PropertyViewModel>(jsonData);
                 return View(values.Data);
             }
             return View();

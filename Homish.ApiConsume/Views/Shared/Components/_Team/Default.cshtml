@@ -1,4 +1,7 @@
-﻿<section class="w3l-team" id="team">
+﻿@using DtoLayer.DTOS.TeamDtos;
+@model List<ResultTeamDto>
+
+<section class="w3l-team" id="team">
     <div class="team-block py-5">
         <div class="container py-lg-5">
             <div class="title-content text-center mb-lg-3 mb-4">
@@ -6,132 +9,33 @@
                 <h3 class="hny-title">Çalışanlarımızla Tanışın</h3>
             </div>
             <div class="row">
+                @foreach (var item in Model)
+                {
+                    
+                
                 <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
                     <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team1.jpg" alt="" class="img-fluid" /></a>
+                        <a href="#url"><img src="@item.Image" alt="" class="img-fluid" /></a>
                         <div class="box-content">
-                            <h3 class="title"><a href="#url">Alexander</a></h3>
-                            <span class="post">Agent</span>
+                            <h3 class="title"><a href="#url">@item.NameSurname</a></h3>
+                            <span class="post">@item.JobTitle</span>
                             <ul class="social">
                                 <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
+                                    <a href="@item.Instagram" class="instagram">
+                                        <span class="fa fa-instagram"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
+                                    <a href="@item.Linkedin" class="linkedin">
+                                        <span class="fa fa-linkedin"></span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
-                    <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team2.jpg" alt="" class="img-fluid" /></a>
-                        <div class="box-content">
-                            <h3 class="title"><a href="#url">Victoria</a></h3>
-                            <span class="post">Agent</span>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
-                    <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team3.jpg" alt="" class="img-fluid" /></a>
-                        <div class="box-content">
-                            <h3 class="title"><a href="#url">Smith roy</a></h3>
-                            <span class="post">Agent</a></span>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
-                    <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team4.jpg" alt="" class="img-fluid" /></a>
-                        <div class="box-content">
-                            <h3 class="title"><a href="#url">Johnson</a></h3>
-                            <span class="post">Agent</a></span>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
-                    <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team5.jpg" alt="" class="img-fluid" /></a>
-                        <div class="box-content">
-                            <h3 class="title"><a href="#url">Johnson</a></h3>
-                            <span class="post">Agent</a></span>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
-                    <div class="box16">
-                        <a href="#url"><img src="~/Homish-Starter/assets/images/team6.jpg" alt="" class="img-fluid" /></a>
-                        <div class="box-content">
-                            <h3 class="title"><a href="#url">Johnson</a></h3>
-                            <span class="post">Agent</a></span>
-                            <ul class="social">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <span class="fa fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                }
+           
             </div>
         </div>
     </div>

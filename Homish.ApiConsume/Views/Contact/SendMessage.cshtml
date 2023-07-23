@@ -1,0 +1,22 @@
+﻿@using DtoLayer.DTOS.MessageDtos;
+@model CreateMessageDto
+
+<div class="form-inner-cont">
+    <form asp-action="SendMessage" method="post" class="signin-form">
+        <div class="form-input">
+            <label for="w3lName">Ad Soyad</label>
+            <input type="text" asp-for="NameSurname" id="w3lName" placeholder="Adınız Soyadınız" />
+        </div>
+        <div class="form-input">
+            <label for="w3lSender">Email *</label>
+            <input type="email" asp-for="Email" id="w3lSender" placeholder="Email Adresiniz" required="" />
+        </div>
+        <div class="form-input">
+            <label for="w3lMessage">Mesajınız *</label>
+            <textarea placeholder="" asp-for="MessageContent" id="w3lMessage" required=""></textarea>
+        </div>
+        <div class="form-submit text-right">
+            <button type="submit" class="btn btn-style btn-primary">Gönder</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿@using DtoLayer.DTOS.TestimonialDtos;
+@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Referans Düzenleme Sayfası</h3>
+<br />
+
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x=>x.TestimonialID)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new{@class="form-control"})
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x=>x.Image, new{@class="form-control"})
+    <br />
+    <label>Şehir</label>
+    @Html.TextBoxFor(x=>x.City, new{@class="form-control"})
+    <br />
+    <label>Yorum</label>
+    @Html.TextBoxFor(x=>x.Comment, new{@class="form-control"})
+    <br />
+
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+
+

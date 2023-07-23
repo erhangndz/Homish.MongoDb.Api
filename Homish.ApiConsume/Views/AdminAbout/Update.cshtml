@@ -1,0 +1,28 @@
+﻿@using DtoLayer.DTOS.AboutDtos;
+@model UpdateAboutDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Hakkımızda Düzenleme Sayfası</h3>
+<br />
+
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x=>x.AboutID)
+    <label>Başlık </label>
+    @Html.TextBoxFor(x=>x.Title, new{@class="form-control"})
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x=>x.Description, new{@class="form-control"})
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x=>x.Image, new{@class="form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+
+
+

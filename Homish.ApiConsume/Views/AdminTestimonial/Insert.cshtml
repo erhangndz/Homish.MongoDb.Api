@@ -1,0 +1,30 @@
+﻿@using DtoLayer.DTOS.TestimonialDtos;
+@model CreateTestimonialDto
+@{
+    ViewData["Title"] = "Insert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Referans Ekleme Sayfası</h3>
+<br />
+
+<form asp-action="Insert" method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new{@class="form-control"})
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x=>x.Image, new{@class="form-control"})
+    <br />
+    <label>Şehir</label>
+    @Html.TextBoxFor(x=>x.City, new{@class="form-control"})
+    <br />
+    <label>Yorum</label>
+    @Html.TextBoxFor(x=>x.Comment, new{@class="form-control"})
+    <br />
+    
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+

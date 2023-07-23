@@ -19,7 +19,7 @@ namespace DataAccessLayer.Concrete
         private readonly IMongoCollection<Team> _teamCollection;
         private readonly IMapper _mapper;
 
-        public TeamService(IMapper mapper,IDatabaseSettings databaseSettings)
+        public TeamService(IMapper mapper, IDatabaseSettings databaseSettings)
         {
             _mapper = mapper;
             var client = new MongoClient(databaseSettings.ConnectionString);
@@ -40,19 +40,33 @@ namespace DataAccessLayer.Concrete
             return Response<NoContent>.Success(200);
         }
 
-        public Task<Response<List<ResultTeamDto>>> GetAllAsync()
+        public async Task<Response<List<ResultTeamDto>>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var values = await _teamCollection.Find(value => true).ToListAsync();
+            return Response<List<ResultTeamDto>>.Success(_mapper.Map<List<ResultTeamDto>>(values), 200);
         }
 
-        public Task<Response<ResultTeamDto>> GetByIdAsync(string id)
+        public async Task<Response<ResultTeamDto>> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            var value = await _teamCollection.Find<Team>(x => x.TeamID == id).FirstOrDefaultAsync();
+            if (value == null)
+            {
+                return Response<ResultTeamDto>.Fail("Ekibimiz Bilgisi Bulunamadı", 404);
+
+            }
+
+            return Response<ResultTeamDto>.Success(_mapper.Map<ResultTeamDto>(value), 200);
         }
 
-        public Task<Response<NoContent>> UpdateAsync(UpdateTeamDto updateTeamDto)
+
+        public async Task<Response<NoContent>> UpdateAsync(UpdateTeamDto updateTeamDto)
         {
-            throw new NotImplementedException();
+            var values = _mapper.Map<Team>(updateTeamDto);
+            var result = await _teamCollection.FindOneAndReplaceAsync(x => x.TeamID == updateTeamDto.TeamID, values);
+            return Response<NoContent>.Success(200);
         }
+
     }
 }
+    
+

@@ -1,0 +1,26 @@
+﻿@using DtoLayer.DTOS.BannerDtos;
+@model UpdateBannerDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Öne Çıkan Düzenleme Sayfası</h3>
+<br />
+
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x=>x.BannerID)
+    <label>Başlık 1</label>
+    @Html.TextBoxFor(x=>x.Title, new{@class="form-control"})
+    <br />
+    <label>Başlık 2</label>
+    @Html.TextBoxFor(x=>x.Title2, new{@class="form-control"})
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x=>x.Description, new{@class="form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+

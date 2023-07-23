@@ -1,0 +1,26 @@
+﻿@using DtoLayer.DTOS.CityDtos;
+@model CreateCityDto
+@{
+    ViewData["Title"] = "Insert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Şehir Ekleme Sayfası</h3>
+<br />
+
+<form asp-action="Insert" method="post">
+    <label>Şehir</label>
+    @Html.TextBoxFor(x=>x.CityName, new{@class="form-control"})
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x=>x.Description, new{@class="form-control"})
+    <br />
+    <label>İlan Sayısı</label>
+    @Html.TextBoxFor(x=>x.PropCount, new{@class="form-control"})
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+

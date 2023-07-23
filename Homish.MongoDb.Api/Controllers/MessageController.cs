@@ -42,14 +42,14 @@ namespace Homish.MongoDb.Api.Controllers
             return CreateActionResultInstance(value);
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMessage(string id)
         {
             var value = await _messageService.DeleteAsync(id);
             return CreateActionResultInstance(value);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdMessage(string id)
         {
             var value = await _messageService.GetByIdAsync(id);

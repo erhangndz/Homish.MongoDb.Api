@@ -1,0 +1,24 @@
+﻿@using DtoLayer.DTOS.ContactDtos;
+@model List<ResultContactDto>
+
+<div class="contant11-top-bg mt-lg-5 mt-4">
+    <div class="container">
+        <div class="d-grid contact pt-lg-4">
+            <div class="contact-info-left d-grid text-left">
+                @foreach (var item in Model)
+                {
+                    
+                
+                <div class="contact-info mt-4">
+                    <h4>@item.OfficeName</h4>
+                    <p class="mb-3"><label>Adres: </label> @item.Address</p>
+                    <p class="mb-3"><label>Email : </label> <a href="mailto:@item.Email" class="email">@item.Email</a></p>
+                    <p class="mb-3"><label>Telefon : </label> <a href="tel:@item.Phone">@item.Phone</a></p>
+                    <p class="mb-3"><label>Çalışma Saatleri : </label> @item.Hours</p>
+                </div>
+                }
+         
+            </div>
+        </div>
+    </div>
+</div>

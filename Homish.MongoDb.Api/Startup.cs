@@ -39,6 +39,7 @@ namespace Homish.MongoDb.Api
             services.AddScoped<IPropertyService, PropertyService>();
             services.AddScoped<ITestimonialService, TestimonialService>();
             services.AddScoped<IWhatWedoService, WhatWedoService>();
+            services.AddScoped<ITeamService, TeamService>();
            
             services.AddAutoMapper(typeof(Startup));
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));

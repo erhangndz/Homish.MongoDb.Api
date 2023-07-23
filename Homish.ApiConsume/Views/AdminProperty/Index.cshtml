@@ -1,0 +1,49 @@
+﻿@using DtoLayer.DTOS.PropertyDtos;
+@model List<ResultPropertyDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">İlanlar Sayfası</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+    
+        <th>Fiyat</th>
+        <th>Açıklama</th>
+        <th>Oda Sayısı</th>
+        <th>Banyo Sayısı</th>
+        <th>Metrekare</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.Image" style="height:50px;width:50px"/> @item.Title</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+            <td>@item.Bedroom</td>
+            <td>@item.Bathroom</td>
+            <td>@item.Square</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.PropertyID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.PropertyID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni İlan Ekle</a>
+
+

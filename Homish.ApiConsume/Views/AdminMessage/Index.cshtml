@@ -1,0 +1,42 @@
+﻿@using DtoLayer.DTOS.MessageDtos;
+@model List<ResultMessageDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Gelen Mesajlar</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>EMail</th>
+        <th>Mesaj</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td>@item.NameSurname</td>
+            <td>@item.Email</td>
+            <td>@item.MessageContent</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.MessageID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.MessageID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+
+
+

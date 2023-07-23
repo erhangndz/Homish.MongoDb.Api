@@ -1,0 +1,41 @@
+﻿@using DtoLayer.DTOS.BannerDtos;
+@model List<ResultBannerDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h3 class="container">Öne Çıkan Sayfası</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Başlık 1</th>
+        <th>Başlık 2</th>
+        <th>Açıklama</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+    <tr>
+        <th>@count</th>
+        <td>@item.Title</td>
+        <td>@item.Title2</td>
+        <td>@item.Description</td>
+        <td> 
+                <a asp-action="Delete" asp-route-id="@item.BannerID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.BannerID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+        </td>
+    </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni Öne Çıkan Ekle</a>

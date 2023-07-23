@@ -1,0 +1,42 @@
+﻿@using DtoLayer.DTOS.CityDtos;
+@model List<ResultCityDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Şehirlere Göre İlanlar</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Şehir</th>
+        <th>Açıklama</th>
+        <th>İlan Sayısı</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td>@item.CityName</td>
+            <td>@item.Description</td>
+            <td>@item.PropCount</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.CityID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.CityID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni Şehir Ekle</a>
+
+

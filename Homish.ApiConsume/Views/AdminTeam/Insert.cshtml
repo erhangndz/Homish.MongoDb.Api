@@ -1,0 +1,34 @@
+﻿@using DtoLayer.DTOS.TeamDtos;
+@model CreateTeamDto
+@{
+    ViewData["Title"] = "Insert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Çalışan Ekleme Sayfası</h3>
+<br />
+
+<form asp-action="Insert" method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new{@class="form-control"})
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x=>x.Image, new{@class="form-control"})
+    <br />
+    <label>İş Unvanı</label>
+    @Html.TextBoxFor(x=>x.JobTitle, new{@class="form-control"})
+    <br />
+    <label>Instagram URL</label>
+    @Html.TextBoxFor(x=>x.Instagram, new{@class="form-control"})
+    <br />
+    <label>Linkedin URL</label>
+    @Html.TextBoxFor(x=>x.Linkedin, new{@class="form-control"})
+    <br />
+   
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+
+

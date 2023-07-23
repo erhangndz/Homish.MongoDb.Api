@@ -1,0 +1,46 @@
+﻿@using DtoLayer.DTOS.ContactDtos;
+@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">İletişim Bilgileri Sayfası</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Ofis İsmi</th>
+        <th>Adres</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Çalışma Saatleri</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td>@item.OfficeName</td>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Hours</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.ContactID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.ContactID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni İletişim Bilgisi Ekle</a>
+
+

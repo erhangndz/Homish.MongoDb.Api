@@ -1,0 +1,34 @@
+﻿@using DtoLayer.DTOS.TeamDtos;
+@model UpdateTeamDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Çalışan Düzenleme Sayfası</h3>
+<br />
+
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x=>x.TeamID)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new{@class="form-control"})
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x=>x.Image, new{@class="form-control"})
+    <br />
+    <label>İş Unvanı</label>
+    @Html.TextBoxFor(x=>x.JobTitle, new{@class="form-control"})
+    <br />
+    <label>Instagram URL</label>
+    @Html.TextBoxFor(x=>x.Instagram, new{@class="form-control"})
+    <br />
+    <label>Linkedin URL</label>
+    @Html.TextBoxFor(x=>x.Linkedin, new{@class="form-control"})
+    <br />
+
+
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+

@@ -1,0 +1,27 @@
+﻿@using DtoLayer.DTOS.MessageDtos;
+@model UpdateMessageDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Mesaj Düzenleme Sayfası</h3>
+<br />
+
+<form asp-action="Update" method="post">
+    @Html.HiddenFor(x=>x.MessageID)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new{@class="form-control"})
+    <br />
+    <label>Email</label>
+    @Html.TextBoxFor(x=>x.Email, new{@class="form-control"})
+    <br />
+    <label>Mesaj</label>
+    @Html.TextAreaFor(x=>x.MessageContent,5,1, new{@class="form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>
+
+

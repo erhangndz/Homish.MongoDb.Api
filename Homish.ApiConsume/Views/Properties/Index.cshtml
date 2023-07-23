@@ -1,0 +1,44 @@
+﻿@using DtoLayer.DTOS.PropertyDtos;
+@model List<ResultPropertyDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<section class="w3l-services1">
+    <div id="content-with-photo4-block" class="py-5">
+        <div class="container py-md-5">
+            <div class="header-section text-center mb-5">
+                <h6 class="sub-title"> İlanlarımız</h6>
+                <h3 class="hny-title">
+                    Satılık veya Kiralık İlanlarımız
+                </h3>
+            </div>
+            <div class="cwp4-two row">
+                @foreach (var item in Model)
+                {
+                    
+                
+                <div class="cwp4-image col-lg-4 col-md-6 mt-4">
+                    <div class="grids4-info">
+                        <a href="#"><img src="@item.Image" class="img-fluid" alt=""></a>
+                        <div class="info-bg">
+                            <h5><a href="#">@item.Title</a></h5>
+                            <span class="price"> Fiyat: @item.Price</span>
+                            <p>@item.Description</p>
+                            <ul>
+                                <li><span class="fa fa-bed"></span> @item.Bedroom</li>
+                                <li><span class="fa fa-bath"></span> @item.Bathroom</li>
+                                <li><span class="fa fa-share-square-o"></span> @item.Square</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+

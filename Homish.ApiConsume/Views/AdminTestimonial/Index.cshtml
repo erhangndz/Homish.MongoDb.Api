@@ -1,0 +1,48 @@
+﻿@using DtoLayer.DTOS.TestimonialDtos;
+@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Referanslar Sayfası</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Şehir</th>
+        <th>Yorum</th>
+       
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.Image" style="height:50px;width:50px" /> @item.NameSurname</td>
+            <td>@item.City</td>
+            <td>@item.Comment</td>
+         
+
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.TestimonialID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.TestimonialID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni Referans Ekle</a>
+
+
+
+

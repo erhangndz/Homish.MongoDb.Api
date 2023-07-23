@@ -1,0 +1,47 @@
+﻿@using DtoLayer.DTOS.TeamDtos;
+@model List<ResultTeamDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Ekibimiz Sayfası</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-hover container">
+
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Unvan</th>
+        <th>Instagram</th>
+        <th>Linkedin</th>
+   
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.Image" style="height:50px;width:50px" /> @item.NameSurname</td>
+            <td>@item.JobTitle</td>
+            <td>@item.Instagram</td>
+            <td>@item.Linkedin</td>
+       
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.TeamID" class="btn btn-danger"><i class="mdi mdi-delete"></i></a>
+                <a asp-action="Update" asp-route-id="@item.TeamID" class="btn btn-dark"><i class="mdi mdi-border-color"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="Insert" class="btn btn-info">Yeni Çalışan Ekle</a>
+
+
+

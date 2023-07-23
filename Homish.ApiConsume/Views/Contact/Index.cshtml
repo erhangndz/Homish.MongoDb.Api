@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<!-- about breadcrumb -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        <div class="container">
+            <h2 class="title">İletişim</h2>
+            <ul class="breadcrumbs-custom-path mt-2">
+                <li><a href="/Default/Index">Ana Sayfa</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> İletişim </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //about breadcrumb -->
+<!--/contact-->
+<section class="w3l-contact-11 py-5">
+    <div class="contacts-main py-lg-5 py-md-4">
+        <div class="title-content text-center">
+            <h6 class="sub-titlehny">İletişim</h6>
+            <h3 class="hny-title">Bizimle iletişime geçin</h3>
+        </div>
+        <div class="form-41-mian section-gap mt-5">
+            <div class="container">
+                <div class="d-grid align-form-map">
+              @await Html.PartialAsync("SendMessage")
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.4624905426986!2d32.83565943935021!3d39.93104344818983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34ee382a6e93b%3A0xc12697c06be82351!2sBa%C5%9Fkent%20Konukevi!5e0!3m2!1str!2str!4v1690095066317!5m2!1str!2str"
+                                frameborder="0" allowfullscreen=""></iframe>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    @await Component.InvokeAsync("_ContactInfo")
+</section>
+<!--//contact-->
+
